@@ -151,9 +151,9 @@ mp = MusicPlayer()
 async def network_status_changed_handler(context, is_connected: bool):
     if is_connected:
         mp.chat_id = MAX_CHANNEL_ID - context.full_chat.id
-        await send_text(f"{emoji.CHECK_MARK_BUTTON} joined the voice chat")
+        await send_text(f"{emoji.CHECK_MARK_BUTTON} MELUNCUR UNTUK BERNYANYI")
     else:
-        await send_text(f"{emoji.CROSS_MARK_BUTTON} left the voice chat")
+        await send_text(f"{emoji.CROSS_MARK_BUTTON} KELUAR AH CAPE BERNYANYI")
         mp.chat_id = None
 
 
@@ -302,7 +302,7 @@ async def join_group_call(client, m: Message):
         await mp.group_call.start(m.chat.id)
         await m.delete()
     if group_call and group_call.is_connected:
-        await m.reply_text(f"{emoji.ROBOT} already joined a voice chat")
+        await m.reply_text(f"{emoji.ROBOT} SUDAH DALAM VCG")
 
 
 @Client.on_message(main_filter
